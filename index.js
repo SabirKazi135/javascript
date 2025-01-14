@@ -1,14 +1,19 @@
-function fun1(callback) {
+function wallDog(callback) {
   setTimeout(() => {
-    console.log("task0");
+    console.log("You walk the dog");
     callback();
-  }, 3000);
+  }, 1500);
 }
 
-function fun2() {
-  console.log("task1");
-  console.log("task2");
-  console.log("task3");
+function cleanKitchen(callback) {
+  setTimeout(() => {
+    console.log("You clean the kitchen");
+    callback();
+  }, 2500);
 }
-
-fun1(fun2);
+function takeOutTrash(callback) {
+  setTimeout(() => {
+    console.log("You take out trash");
+    callback();
+  }, 500);
+}
