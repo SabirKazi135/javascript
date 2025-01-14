@@ -1,8 +1,9 @@
-function walkDog(callback) {
-  setTimeout(() => {
-    console.log("You walk the dog");
-    callback();
-  }, 1500);
+function walkDog() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("You walk the dog");
+    }, 1500);
+  });
 }
 
 function cleanKitchen(callback) {
