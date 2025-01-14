@@ -1,4 +1,4 @@
-function wallDog(callback) {
+function walkDog(callback) {
   setTimeout(() => {
     console.log("You walk the dog");
     callback();
@@ -17,3 +17,9 @@ function takeOutTrash(callback) {
     callback();
   }, 500);
 }
+
+walkDog(() => {
+  cleanKitchen(() => {
+    takeOutTrash(() => console.log("You finish all the chores"));
+  });
+});
