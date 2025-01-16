@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Price Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #181818;
+        color: #eaeaea;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+        padding: 20px;
+        background-color: #242424;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      h1 {
+        color: #ffffff;
+        margin-bottom: 20px;
+      }
+
+      .product-form input,
+      .product-form button {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        width: 80%;
+      }
+
+      .product-form input {
+        background-color: #333;
+        color: #eaeaea;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .product-list {
+        width: 100%;
+        margin-top: 20px;
+        color: #fff;
+      }
+
+      .product-item {
+        padding: 10px;
+        background-color: #333;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .discounted-price {
+        font-weight: bold;
+        color: #4caf50;
+      }
+
+      .error-message {
+        color: #f44336;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Product Price Calculator</h1>
+
+      <!-- Product Form -->
+      <div class="product-form">
+        <input type="text" id="product-name" placeholder="Product Name" />
+        <input type="number" id="product-price" placeholder="Product Price" />
+        <input
+          type="number"
+          id="product-discount"
+          placeholder="Discount Percentage"
+        />
+        <button id="add-product-btn">Add Product</button>
+      </div>
+
+      <!-- Product List -->
+      <div class="product-list" id="product-list"></div>
+
+      <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script>
+      // Class for Product
+      class Product {
+        constructor(name, price, discount) {
+          this.name = name;
+          this.price = price;
+          this.discount = discount;
+        }
+
+        // Calculate the discounted price
+        getDiscountedPrice() {
+          return this.price * (1 - this.discount / 100);
+        }
+      }
+
+      // Utility function to display products
+      function displayProducts(products) {
+        const productList = document.getElementById("product-list");
+        productList.innerHTML = ""; // Clear the list before appending
+        products.forEach((product) => {
+          const productElement = document.createElement("div");
+          productElement.classList.add("product-item");
+          productElement.innerHTML = `
+          <span>${product.name}</span>
+          <span>$${product.price.toFixed(2)}</span>
+          <span>Discount: ${product.discount}%</span>
+          <span class="discounted-price">$${product
+            .getDiscountedPrice()
+            .toFixed(2)}</span>
+        `;
+          productList.appendChild(productElement);
+        });
+      }
+
+      // Error handling function
+      function showError(message) {
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = message;
+      }
+
+      // Clear error messages
+      function clearError() {
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = "";
+      }
+
+      // Handle the add product button click
+      document
+        .getElementById("add-product-btn")
+        .addEventListener("click", () => {
+          const name = document.getElementById("product-name").value.trim();
+          const price = parseFloat(
+            document.getElementById("product-price").value
+          );
+          const discount = parseFloat(
+            document.getElementById("product-discount").value
+          );
+
+          // Validation
+          if (
+            !name ||
+            isNaN(price) ||
+            isNaN(discount) ||
+            price <= 0 ||
+            discount < 0 ||
+            discount > 100
+          ) {
+            showError("Please enter valid product details.");
+            return;
+          }
+          clearError();
+
+          // Create the product and display it
+          const product = new Product(name, price, discount);
+          products.push(product);
+          displayProducts(products);
+
+          // Reset the form fields
+          document.getElementById("product-name").value = "";
+          document.getElementById("product-price").value = "";
+          document.getElementById("product-discount").value = "";
+        });
+
+      // Store products in an array
+      const products = [];
+    </script>
+  </body>
+</html>
