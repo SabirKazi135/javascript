@@ -21,4 +21,4 @@ console.log(Person1.firstName);
 console.log(Person1.lastName);
 console.log(Person1.age);
 console.log(Person1.isEmployee);
-console.log(Person1.fullName);
+console.log(Person1.fullName());
