@@ -15,9 +15,12 @@ const per2 = new Person("Raees", "Jamadar", 20);
 const per3 = new Person("Siddiq", "Untwale", 22);
 const per4 = new Person("Taif", "Bepari", 23);
 
-per1.forEach((per) => {
+const persons = [per1, per2, per3, per4];
+
+persons.forEach((per) => {
   console.log(per.firstName);
   console.log(per.lastName);
   console.log(per.age);
   console.log(per.fullName());
+  console.log("");
 });
