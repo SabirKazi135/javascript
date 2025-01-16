@@ -1,11 +1,8 @@
-let a = 1;
-let b = 2;
+const Person = {
+  firstName: "Sabir",
+  lastName: "Kazi",
+  age: 21,
+  isEmployee: false,
+};
 
-setTimeout(() => {
-  console.log("asysncs");
-}, 3000);
-
-console.log("sych");
-
-console.log(a);
-console.log(b);
+console.log(Person.firstName);
