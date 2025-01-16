@@ -10,6 +10,8 @@ class Person {
   }
 }
 
+vs
+
 function Person(firstName, lastName, age) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -18,6 +20,8 @@ function Person(firstName, lastName, age) {
     return `${this.firstName} ${this.lastName}`;
   };
 }
+
+what is the difference with example 
 
 const per1 = new Person("Sabir", "Kazi", 21);
 const per2 = new Person("Raees", "Jamadar", 20);
