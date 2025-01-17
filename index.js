@@ -1,42 +1,23 @@
-class animal {
-  constructor() {}
-  alive = true;
+class Animal {}
 
-  eat() {
-    console.log(`This ${this.name} is eating`);
-  }
-  sleep() {
-    console.log(`This ${this.name} is sleeping`);
+class Rabbit extends Animal {
+  constructor(name, age, runSpeed) {
+    this.name = name;
+    this.age = age;
+    this.runSpeed = runSpeed;
   }
 }
-
-class Rabbit extends animal {
-  name = "rabbit";
-  run() {
-    console.log(`This ${this.name} is running`);
+class Fish extends Animal {
+  constructor(name, age, swimSpeed) {
+    this.name = name;
+    this.age = age;
+    this.swimSpeed = swimSpeed;
   }
 }
-
-class Fish extends animal {
-  name = "fish";
-  swim() {
-    console.log(`This ${this.name} swemming`);
+class Hawk extends Animal {
+  constructor(name, age, flySpeed) {
+    this.name = name;
+    this.age = age;
+    this.flySpeed = flySpeed;
   }
 }
-
-class Hawk extends animal {
-  name = "hawk";
-  fly() {
-    console.log(`This ${this.name} fliying`);
-  }
-}
-
-const rabbit = new Rabbit();
-const fish = new Fish();
-const hawk = new Hawk();
-
-rabbit.run();
-
-fish.swim();
-
-hawk.fly();
