@@ -1,23 +1,25 @@
-class Animal {}
-
-class Rabbit extends Animal {
-  constructor(name, age, runSpeed) {
+class Animal {
+  constructor(name, age) {
     this.name = name;
     this.age = age;
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(runSpeed) {
+    super();
     this.runSpeed = runSpeed;
   }
 }
 class Fish extends Animal {
-  constructor(name, age, swimSpeed) {
-    this.name = name;
-    this.age = age;
+  constructor(swimSpeed) {
+    super();
     this.swimSpeed = swimSpeed;
   }
 }
 class Hawk extends Animal {
-  constructor(name, age, flySpeed) {
-    this.name = name;
-    this.age = age;
+  constructor(flySpeed) {
+    super();
     this.flySpeed = flySpeed;
   }
 }
