@@ -3,12 +3,21 @@ class Animal {
     this.name = name;
     this.age = age;
   }
+
+  move(speed) {
+    console.log(`This ${this.name} moves at a speed of ${speed}kmp`);
+  }
 }
 
 class Rabbit extends Animal {
   constructor(name, age, runSpeed) {
     super(name, age); // Pass name and age to the parent constructor
     this.runSpeed = runSpeed; // Set the Rabbit-specific property
+  }
+
+  run() {
+    console.log(`This ${this.name} can run`);
+    super.move(this.runSpeed);
   }
 }
 
@@ -31,7 +40,6 @@ const rabbit1 = new Rabbit("Rabo", 1, 25);
 const fish1 = new Fish("Fisho", 1, 15);
 const hawk1 = new Hawk("Hawko", 1, 40);
 
-// Logging the instances
-console.log(rabbit1); // Rabbit { name: 'Rabo', age: 1, runSpeed: 25 }
-console.log(fish1); // Fish { name: 'Fisho', age: 1, swimSpeed: 15 }
-console.log(hawk1); // Hawk { name: 'Hawko', age: 1, flySpeed: 40 }
+// Logging the insta// Hawk { name: 'Hawko', age: 1, flySpeed: 40 }
+
+rabbit1.run();
