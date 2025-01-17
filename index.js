@@ -20,6 +20,6 @@ class Rectangle {
   }
 }
 
-const rectangle = new Rectangle(-1000000, "pizza");
+const rectangle = new Rectangle(3, 3);
 console.log(rectangle.height);
 console.log(rectangle.width);
