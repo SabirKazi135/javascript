@@ -35,7 +35,8 @@ const rabbit = new Rabbit();
 const fish = new Fish();
 const hawk = new Hawk();
 
-rabbit.alive = false;
-console.log(rabbit.alive);
-
 rabbit.run();
+
+fish.swim();
+
+hawk.fly();
