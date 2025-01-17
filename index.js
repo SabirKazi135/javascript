@@ -1,38 +1,49 @@
-class Rectangle {
-  constructor(width, height) {
-    this.width = width;
-    this.height = height;
+class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
   }
 
-  set width(newWidth) {
-    if (newWidth > 0) {
-      this._width = newWidth;
+  set firstName(newFirstName) {
+    if (typeof newFirstName === "string" && newFirstName.length > 0) {
+      this._firstName = newFirstName;
     } else {
-      console.log("Width Must be a positive number");
+      console.error("First Name must be a non emty string");
     }
   }
-  set height(newHeight) {
-    if (newHeight > 0) {
-      this._Height = newHeight;
+  set lastName(newLastName) {
+    if (typeof newLastName === "string" && newLastName.length > 0) {
+      this._lastName = newLastName;
     } else {
-      console.log("Height Must be a positive number");
+      console.error("Last Name must be a non emty string");
+    }
+  }
+  set age(newAge) {
+    if (typeof newAge === "number" && newAge >= 0) {
+      this._age = newAge;
+    } else {
+      console.error("age must be a non nagative number");
     }
   }
 
-  get width() {
-    return `${this._width.toFixed(1)}`;
+  get firstName() {
+    return this._firstName;
   }
-  get height() {
-    return `${this._Height.toFixed(1)}`;
+  get lastName() {
+    return this._lastName;
   }
-
-  get area() {
-    return `${(this._width * this._Height).toFixed(1)}cm^2`;
+  get fullName() {
+    return this._firstName + " " + this.lastName;
+  }
+  get age() {
+    return this._age;
   }
 }
 
-const rectangle = new Rectangle(3, 3);
-console.log(rectangle.height);
-console.log(rectangle.width);
+const person = new Person("sabir", "kazi", 21);
 
-console.log(rectangle.area);
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person.fullName);
+console.log(person.age);
