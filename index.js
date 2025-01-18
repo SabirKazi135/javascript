@@ -1,49 +1,29 @@
-class Person {
-  constructor(firstName, lastName, age) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-  }
-
-  set firstName(newFirstName) {
-    if (typeof newFirstName === "string" && newFirstName.length > 0) {
-      this._firstName = newFirstName;
-    } else {
-      console.error("First Name must be a non emty string");
-    }
-  }
-  set lastName(newLastName) {
-    if (typeof newLastName === "string" && newLastName.length > 0) {
-      this._lastName = newLastName;
-    } else {
-      console.error("Last Name must be a non emty string");
-    }
-  }
-  set age(newAge) {
-    if (typeof newAge === "number" && newAge >= 0) {
-      this._age = newAge;
-    } else {
-      console.error("age must be a non nagative number");
-    }
-  }
-
-  get firstName() {
-    return this._firstName;
-  }
-  get lastName() {
-    return this._lastName;
-  }
-  get fullName() {
-    return this._firstName + " " + this.lastName;
-  }
-  get age() {
-    return this._age;
+class Vehicle {
+  constructor(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
   }
 }
 
-const person = new Person("sabir", "kazi", 21);
+class Car extends Vehicle {
+  constructor(make, model, year, numberOfDoors, getDetails) {
+    super(make, model, year);
+    this.numberOfDoors = numberOfDoors;
+    this.getDetails = getDetails;
+  }
+}
+class bike extends Vehicle {
+  constructor(make, model, year, type) {
+    super(make, model, year);
+    this.type = type;
+  }
+}
 
-console.log(person.firstName);
-console.log(person.lastName);
-console.log(person.fullName);
-console.log(person.age);
+const car1 = new Car("Toyota", "Camry", 2020, 4);
+const car2 = new Car("Honda", "Civic", 2018, 2);
+const car3 = new Car("Ford", "Mustang", 2021, 2);
+
+const bike1 = new bike("Harley-Deavidson", "iron 883", 2019, "Cruiser");
+const bike2 = new bike("Yamaha", "YZF R3", 2022, "Sport");
+const bike3 = new bike("Kawasaki", "Ninja 400", 2021, "Sport");
