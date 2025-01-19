@@ -1,5 +1,8 @@
 const colors = ["red", "green", "blue", "black", "white"];
 
-[colors[0], colors[4]] = [colors[4], colors[0]];
+const [firstColor, secondColor, thirdColor, ...otherColors] = colors;
 
-console.log(colors);
+console.log(firstColor);
+console.log(secondColor);
+console.log(thirdColor);
+console.log(otherColors);
