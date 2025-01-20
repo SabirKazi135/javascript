@@ -1,15 +1,15 @@
-const person = {
-  fullName: "Sabir",
-  age: 21,
-  isStudent: true,
-  hobbies: ["karate", "coding", "cooking"],
-  address: {
-    street: "Vaibhav Nagar",
-    city: "Belgavi",
-    country: "India",
-  },
-};
+class Person {
+  constructor(name, age, ...address) {
+    this.name = name;
+    this.age = age;
+    this.address = new Address(...address);
+  }
+}
 
-for (const property in person.address) {
-  console.log(person.address[property]);
+class Address {
+  constructor(street, city, country) {
+    this.street = street;
+    this.city = city;
+    this.country = country;
+  }
 }
