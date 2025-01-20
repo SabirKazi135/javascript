@@ -13,3 +13,8 @@ class Address {
     this.country = country;
   }
 }
+
+const per1 = new Person("sabir", 21, "vaibhav nagar", "belgavi", "india");
+const per2 = new Person("raees", 20, "tipu nagar", "gokak", "india");
+
+console.log(per1.address.street);
