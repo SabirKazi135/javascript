@@ -10,4 +10,6 @@ const person = {
   },
 };
 
-console.log(person.address.city);
+for (const property in person.address) {
+  console.log(person.address[property]);
+}
