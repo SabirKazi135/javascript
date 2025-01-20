@@ -1,11 +1,24 @@
-function increament() {
+function createCounter() {
   let count = 0;
-  count++;
-  console.log(`Count increased to ${count}`);
+  function increament() {
+    count++;
+    console.log(`Count increased to ${count}`);
+  }
+
+  function getCount() {
+    return count;
+  }
+  return { increament, getCount };
 }
 
-increament();
-increament();
-increament();
-increament();
-increament();
+const counter = createCounter();
+
+counter.increament();
+counter.increament();
+counter.increament();
+counter.increament();
+counter.increament();
+
+counter.increament();
+
+console.log(`current ` + counter.getCount());
