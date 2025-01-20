@@ -1,22 +1,13 @@
-function displayPerson({ firstName, lastName, age, job = "unempoye" }) {
-  console.log(firstName);
-  console.log(lastName);
-  console.log(age);
-  console.log(job);
-  console.log("-----------");
-}
-
-const person1 = {
-  firstName: "Sabir",
-  lastName: "Kazi",
+const person = {
+  fullName: "Sabir",
   age: 21,
-  job: "nonjob",
-};
-const person2 = {
-  firstName: "Raees",
-  lastName: "Jamadar",
-  age: 20,
+  isStudent: true,
+  hobbies: ["karate", "coding", "cooking"],
+  address: {
+    street: "Vaibhav Nagar",
+    city: "Belgavi",
+    country: "India",
+  },
 };
 
-displayPerson(person1);
-displayPerson(person2);
+console.log(person.hobbies);
