@@ -6,7 +6,11 @@
     <title>Document</title>
     <style>
       body {
-        background-color: gray;
+        background-color: hsl(0, 0%, 45%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
 
       #keys {
@@ -23,6 +27,15 @@
         background-color: hsl(0, 0%, 15%);
         overflow: hidden;
       }
+
+      #display {
+        width: 100%;
+        padding: 20px;
+        font-size: 5rem;
+        text-align: left;
+        border: none;
+        background-color: hsl(0, 0%, 20%);
+      }
       button {
         width: 100px;
         height: 100px;
@@ -37,7 +50,7 @@
   </head>
   <body>
     <div class="calculator">
-      <input id="id" readonly />
+      <input id="display" readonly />
       <div id="keys">
         <button onclick="appendToDisplay('+')">+</button>
         <button onclick="appendToDisplay('7')">7</button>
