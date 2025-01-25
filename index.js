@@ -1,2 +1,7 @@
-console.log("hello");
+try {
+  console.log(x);
+} catch (error) {
+  console.log(error);
+}
+
 console.log("you have end");
