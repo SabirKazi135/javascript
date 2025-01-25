@@ -1,9 +1,5 @@
-try {
-  console.log("hell");
-} catch (error) {
-  console.error(error);
-} finally {
-  console.log("This always execute");
-}
+const dividend = window.prompt("Enter a diviend: ");
+const divisor = window.prompt("Enter a divisor: ");
 
-console.log("you have end");
+const result = dividend / divisor;
+console.log(result);
